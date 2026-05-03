@@ -63,3 +63,15 @@ func _physics_process(delta):
 func _on_tcube_body_entered(body):
 	if body == self:
 		get_node(^"WinText").show()
+		
+func _on_cringecube_body_entered(body):
+	if body == self:
+		get_node(^"CringeText").show()
+
+func _on_tcube_body_exited(body):
+	if body == self:
+		get_node(^"WinText").hide()
+		
+func _on_cringecube_body_exited(body):
+	if body == self:
+		get_node(^"CringeText").hide()

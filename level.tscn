@@ -158,4 +158,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13.25, 3)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("4")
 
+[node name="Princess2" type="Area3D" parent="." unique_id=345257631]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.2415786, 6)
+
+[node name="Mushroom" parent="Princess2" unique_id=1886194760 instance=ExtResource("5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.1880713, -3.024077, -6.964586)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Princess2" unique_id=133595310]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.1851597, -2.717868, -6.94955)
+shape = SubResource("4")
+
 [connection signal="body_entered" from="Princess" to="Cubio" method="_on_tcube_body_entered"]
+[connection signal="body_exited" from="Princess" to="Cubio" method="_on_princess_body_exited"]
+[connection signal="body_exited" from="Princess" to="Cubio" method="_on_tcube_body_exited"]
+[connection signal="body_entered" from="Princess2" to="Cubio" method="_on_cringecube_body_entered"]
+[connection signal="body_exited" from="Princess2" to="Cubio" method="_on_cringecube_body_exited"]
