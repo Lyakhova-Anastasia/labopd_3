@@ -34,5 +34,5 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           generateReleaseNotes: true
-          tag: ${{ github.head_ref }}.${{ github.sha }}
+          tag: ${{ github.workflow }}.${{ github.run_number }}.${{ github.run_attempt }}
           artifacts: ${{ steps.export.outputs.archive_directory }}/*
