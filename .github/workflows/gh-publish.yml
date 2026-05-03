@@ -37,3 +37,4 @@ jobs:
           generateReleaseNotes: true
           tag: ${{ github.workflow }}.${{ github.run_number }}.${{ github.run_attempt }}
           artifacts: ${{ steps.export.outputs.archive_directory }}/*
+          makeLatest: latest
